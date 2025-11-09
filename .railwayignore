@@ -1,0 +1,13 @@
+node_modules/
+dist/
+android/
+*.dmg
+*.exe
+*.blockmap
+.DS_Store
+*.log
+activations.json
+.git/
+.vscode/
+*.code-workspace
+
