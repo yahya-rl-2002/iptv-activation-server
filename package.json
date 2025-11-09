@@ -1,123 +1,20 @@
 {
-  "name": "xtream-iptv-player",
-  "version": "3.0.0",
-  "description": "Xtream IPTV Player v3 - Ultra-Fast Streaming with IPv4 DNS Resolution for macOS",
-  "main": "electron-main.js",
+  "name": "iptv-activation-server",
+  "version": "1.0.0",
+  "description": "IPTV Activation Server",
+  "main": "activation-server.js",
   "scripts": {
-    "start": "node activation-server.js",
-    "start:electron": "electron .",
-    "build": "electron-builder",
-    "build:mac": "electron-builder --mac",
-    "build:win": "electron-builder --win",
-    "build:win32": "electron-builder --win --ia32",
-    "build:win64": "electron-builder --win --x64",
-    "pack": "electron-builder --dir",
-    "android:sync": "npx cap sync android",
-    "android:sync-run": "./workflow-android-tv.sh",
-    "android:build": "cd android && export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home && export PATH=\"$JAVA_HOME/bin:$PATH\" && ./gradlew assembleRelease",
-    "android:build-tv": "cd android && export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home && export PATH=\"$JAVA_HOME/bin:$PATH\" && ./gradlew assembleRelease",
-    "android:open": "npx cap open android",
-    "android:clean": "cd android && export JAVA_HOME=/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home && export PATH=\"$JAVA_HOME/bin:$PATH\" && ./gradlew clean",
-    "android:reload": "npm run android:sync && echo '✅ Synchronisation terminée - Relancer l''app dans Android Studio pour voir les modifications'",
-    "changes": "./show-changes.sh",
-    "changelog": "cat CHANGELOG.md"
+    "start": "node activation-server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [
     "iptv",
-    "streaming",
-    "electron",
-    "macos"
+    "activation",
+    "server"
   ],
   "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^27.0.0",
-    "electron-builder": "^24.6.4"
-  },
-  "build": {
-    "appId": "com.xtream.iptv",
-    "productName": "Xtream IPTV Player v3",
-    "mac": {
-      "category": "public.app-category.entertainment",
-      "icon": "icon.png",
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
-      ],
-      "hardenedRuntime": true,
-      "gatekeeperAssess": false,
-      "entitlements": "entitlements.mac.plist",
-      "entitlementsInherit": "entitlements.mac.plist"
-    },
-    "dmg": {
-      "title": "${productName} ${version}",
-      "icon": "icon.png",
-      "backgroundColor": "#0f1419",
-      "contents": [
-        {
-          "x": 110,
-          "y": 150,
-          "type": "file"
-        },
-        {
-          "x": 340,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ],
-      "window": {
-        "width": 540,
-        "height": 380
-      }
-    },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
-      "icon": "icon.png",
-      "requestedExecutionLevel": "asInvoker"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "Xtream IPTV Player v3"
-    },
-    "files": [
-      "**/*",
-      "!**/*.ts",
-      "!*.code-workspace",
-      "!.gitignore",
-      "!.vscode",
-      "!node_modules"
-    ],
-    "directories": {
-      "output": "dist"
-    }
-  },
-  "dependencies": {
-    "@capacitor/android": "^7.4.4",
-    "@capacitor/cli": "^6.2.1",
-    "@capacitor/core": "^7.4.4"
-  }
+  "license": "MIT"
 }
 
