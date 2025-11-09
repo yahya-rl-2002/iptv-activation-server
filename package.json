@@ -4,7 +4,8 @@
   "description": "Xtream IPTV Player v3 - Ultra-Fast Streaming with IPv4 DNS Resolution for macOS",
   "main": "electron-main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "node activation-server.js",
+    "start:electron": "electron .",
     "build": "electron-builder",
     "build:mac": "electron-builder --mac",
     "build:win": "electron-builder --win",
