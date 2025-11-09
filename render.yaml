@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: iptv-activation-server
+    env: node
+    buildCommand: npm install
+    startCommand: node activation-server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    plan: free
+
